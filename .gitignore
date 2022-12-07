@@ -1,0 +1,8 @@
+# 기업 코테
+/src/enterprise
+
+# 쓸모 없는 거
+TestRepository.iml
+/.idea
+/out
+
