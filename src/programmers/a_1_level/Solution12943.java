@@ -20,11 +20,11 @@ public class Solution12943 {
     }
 
     public static void main(String[] args) {
-//        int num = 6;
-//        System.out.println(solution(num));
-//
-//        int num2 = 16;
-//        System.out.println(solution(num2));
+        int num = 6;
+        System.out.println(solution(num));
+
+        int num2 = 16;
+        System.out.println(solution(num2));
 
         int num3 = 626331;
         System.out.println(solution(num3));
