@@ -1,10 +1,23 @@
-package programmers;
+package programmers.a_2_level;
 
 import java.util.Arrays;
 
 public class Solution42747 {
 
-    public int solution(int[] citations) {
+    public static int solution(int[] citations) {
+        int max = 0;
+        Arrays.sort(citations);
+
+        for (int index = citations.length - 1; index >= 0; index--) {
+            int min = Math.min(citations[index], citations.length - index);
+            if (max < min)
+                max = min;
+        }
+
+        return max;
+    }
+
+    public int solution2(int[] citations) {
         int answer = 0;
         Arrays.sort(citations);
 
@@ -19,12 +32,12 @@ public class Solution42747 {
         int beyondCount = 0;
         int belowCount = 0;
 
-        for (int i = 0; i < citations.length; i++) {
-            if (citations[i] > number) {
+        for (int citation : citations) {
+            if (citation > number) {
                 ++beyondCount;
                 continue;
             }
-            if (citations[i] == number) {
+            if (citation == number) {
                 ++belowCount;
                 ++beyondCount;
                 continue;
@@ -39,8 +52,7 @@ public class Solution42747 {
     }
 
     public static void main(String[] args) {
-        Solution42747 solution = new Solution42747();
         int[] citations = {3, 0, 6, 1, 5};
-        System.out.println(solution.solution(citations));
+        System.out.println(solution(citations));
     }
 }
