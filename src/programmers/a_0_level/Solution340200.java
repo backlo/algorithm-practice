@@ -12,34 +12,53 @@ public class Solution340200 {
     public String solution(String nickname) {
         StringBuilder answer = new StringBuilder();
 
-        for(int i=0; i<nickname.length(); i++){
-            if(nickname.charAt(i) == 'l'){
+        for (int i = 0; i < nickname.length(); i++) {
+            if (nickname.charAt(i) == 'l') {
                 answer.append("I");
-            }
-            else if(nickname.charAt(i) == 'w'){
+            } else if (nickname.charAt(i) == 'w') {
                 answer.append("vv");
-            }
-            else if(nickname.charAt(i) == 'W'){
+            } else if (nickname.charAt(i) == 'W') {
                 answer.append("VV");
-            }
-            else if(nickname.charAt(i) == 'O'){
+            } else if (nickname.charAt(i) == 'O') {
                 answer.append("0");
-            }
-            else{
+            } else {
                 answer.append(nickname.charAt(i));
             }
         }
 
-        if(answer.length() < 3){
+        if (answer.length() < 3) {
             answer.append("o");
 
         }
 
-        if(answer.length() > 8){
+        if (answer.length() > 8) {
             answer = new StringBuilder(answer.substring(0, 8));
         }
 
         return answer.toString();
     }
 
+    public String solution2(String nickname) {
+        String answer = "";
+        for (int i = 0; i < nickname.length(); i++) {
+            if (nickname.charAt(i) == 'l') {
+                answer += "I";
+            } else if (nickname.charAt(i) == 'w') {
+                answer += "vv";
+            } else if (nickname.charAt(i) == 'W') {
+                answer += "VV";
+            } else if (nickname.charAt(i) == 'O') {
+                answer += "0";
+            } else {
+                answer += nickname.charAt(i);
+            }
+        }
+        while (answer.length() < 4) {
+            answer += "o";
+        }
+        if (answer.length() > 8) {
+            answer = answer.substring(0, 8);
+        }
+        return answer;
+    }
 }
